@@ -1,5 +1,5 @@
 %define upstream_name	 Pod-Coverage
-%define upstream_version 0.20
+%define upstream_version 0.21
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Checks if the documentation of a perl module is comprehensive
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Pod/%{upstream_name}-%{upstream_version}.tar.bz2
+Source0:	http://www.cpan.org/modules/by-module/Pod/%{upstream_name}-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-Devel-Symdump
@@ -29,7 +29,9 @@ comprehensive.
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor DESTDIR=%{buildroot}
 %make
-make test
+
+%check
+%make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
