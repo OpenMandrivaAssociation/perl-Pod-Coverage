@@ -1,14 +1,14 @@
 %define modname	Pod-Coverage
-%define modver	0.21
+%define modver 0.23
 
 Summary:	Checks if the documentation of a perl module is comprehensive
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	10
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/Pod/%{modname}-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Pod/Pod-Coverage-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-Devel-Symdump
@@ -39,4 +39,5 @@ comprehensive.
 %{_bindir}/pod_cover
 %{perl_vendorlib}/Pod/*
 %{_mandir}/man3/*
+
 
