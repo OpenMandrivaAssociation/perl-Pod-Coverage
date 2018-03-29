@@ -1,16 +1,18 @@
 %define modname	Pod-Coverage
 %define modver 0.23
 
+# Avoid circular build dependency
+%define dont_gprintify 1
+
 Summary:	Checks if the documentation of a perl module is comprehensive
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	6
+Release:	7
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/Pod/Pod-Coverage-%{modver}.tar.gz
 BuildArch:	noarch
-BuildRequires:	perl-Module-Build
 BuildRequires:	perl-Devel-Symdump
 BuildRequires:	perl-devel
 
@@ -32,12 +34,11 @@ comprehensive.
 %make test
 
 %install
-%makeinstall_std
+%make_install
+find %{buildroot} -name .packlist -o -name perllocal.pod |xargs rm -f
 
 %files
 %doc Changes
 %{_bindir}/pod_cover
 %{perl_vendorlib}/Pod/*
 %{_mandir}/man3/*
-
-
