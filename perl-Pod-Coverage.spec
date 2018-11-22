@@ -13,6 +13,7 @@ Group:		Development/Perl
 Url:		http://metacpan.org/pod/Pod::Coverage
 Source0:	http://www.cpan.org/modules/by-module/Pod/Pod-Coverage-%{modver}.tar.gz
 BuildArch:	noarch
+BuildRequires:	perl(Pod::Parser)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl-Devel-Symdump
 BuildRequires:	perl-devel
