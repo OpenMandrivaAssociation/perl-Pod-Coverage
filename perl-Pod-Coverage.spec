@@ -7,7 +7,7 @@
 Summary:	Checks if the documentation of a perl module is comprehensive
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	16
+Release:	17
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Pod::Coverage
